@@ -215,7 +215,3 @@ nav{
 [data-theme='dark'] .d-block-dark {
     display: block !important;
 }
-
-.navbar{
-    flex-wrap: initial;
-}
