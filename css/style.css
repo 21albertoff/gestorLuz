@@ -2,7 +2,6 @@
     --background-color: #f7f9fc;
     --background-card: #ffffff;
     --text-color: #262626;
-    
 }
 
 html[data-theme='light'] {
@@ -20,7 +19,6 @@ html[data-theme='dark'] {
 
 body{
     margin:0;
-    transition: 0.5s;
     font-family: 'Heebo', sans-serif;
     background-color: var(--background-color);
     color: var(--text-color);
@@ -59,8 +57,14 @@ section{
     fill: var(--background-color);
 }
 
+.logo-movil{
+    height: 11vh;
+    -webkit-filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.9));
+    filter: drop-shadow(5px 5px 1px rgba(0, 0, 0, 0.1));
+}
+
 .logo{
-    width:  40vh;
+    height: 15vh;
     -webkit-filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.9));
     filter: drop-shadow(5px 5px 1px rgba(0, 0, 0, 0.1));
 }
@@ -201,17 +205,18 @@ nav{
     line-height: 1.2;
 }
 
-[data-theme='dark'] .form-control {
-    background-color: rgba(0, 0, 0, 0.6);
-    border-color: rgba(0, 0, 0, 0.6);
-    color: var(--text-color) !important;
-}
 
-[data-theme='dark'] .form-control:focus {
-    color: var(--text-color) !important;
-}
 
 [data-theme='light'] .d-block-light,
 [data-theme='dark'] .d-block-dark {
     display: block !important;
+    color: var(--background-color);
+}
+
+.d-block-light:hover,
+.d-block-dark:hover {
+    color: var(--text-color) !important;
+}
+.navbar{
+    padding: 20px 20px;
 }
