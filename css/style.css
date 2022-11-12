@@ -1,0 +1,223 @@
+:root {
+    --background-color: #f7f9fc;
+    --background-card: #ffffff;
+    --text-color: #262626;
+    
+}
+
+html[data-theme='light'] {
+    --background-color: #f7f9fc;
+    --background-card: #ffffff;
+    --text-color: #262626;
+}
+
+html[data-theme='dark'] {
+    --background-color: #262626;
+    --background-card: #3c3c3c;
+    --text-color: #ffffff;
+}
+
+
+body{
+    margin:0;
+    transition: 0.5s;
+    font-family: 'Heebo', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+   
+}
+
+section{
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 500px;
+    padding: 45px 10vw;
+    background: rgb(252,74,26);
+    background: linear-gradient(90deg, rgba(252,74,26,1) 0%, rgba(247,183,51,1) 100%);
+    
+
+}
+
+.custom-shape-divider-bottom-1667738701 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-bottom-1667738701 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 200px;
+}
+
+.custom-shape-divider-bottom-1667738701 .shape-fill {
+    fill: var(--background-color);
+}
+
+.logo{
+    width:  40vh;
+    -webkit-filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.9));
+    filter: drop-shadow(5px 5px 1px rgba(0, 0, 0, 0.1));
+}
+
+nav{
+    background: rgb(252,74,26);
+    background: linear-gradient(90deg, rgb(252, 74, 26) 0%, rgba(247,183,51,1) 100%);
+    
+
+}
+
+.parpadea {
+  
+    animation-name: parpadeo;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  
+    -webkit-animation-name:parpadeo;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+  }
+  
+  @-moz-keyframes parpadeo{  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+  }
+  
+  @-webkit-keyframes parpadeo {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.9; }
+     100% { opacity: 1.0; }
+  }
+  
+  @keyframes parpadeo {  
+    0% { opacity: 1.0; }
+    89% { opacity: 1.0; }
+     90% { opacity: 0.4; }
+     95% { opacity: 1.0; }
+     96% { opacity: 0.1; }
+    100% { opacity: 1.0; }
+  }
+
+.card{
+    box-shadow: 0 0 0.875rem 0 rgb(41 48 66 / 5%);
+    margin-bottom: 24px;
+    --bs-card-spacer-y: 1.25rem;
+    --bs-card-spacer-x: 1.25rem;
+    --bs-card-title-spacer-y: 0.5rem;
+    --bs-card-border-width: 0;
+    --bs-card-border-color: transparent;
+    --bs-card-border-radius: 0.25rem;
+    --bs-card-inner-border-radius: 0.25rem;
+    --bs-card-cap-padding-y: 1rem;
+    --bs-card-cap-padding-x: 1.25rem;
+    --bs-card-cap-bg: var(--background-card);
+    --bs-card-bg: var(--background-card);;
+    --bs-card-img-overlay-padding: 1rem;
+    --bs-card-group-margin: 12px;
+    word-wrap: break-word;
+    background-clip: border-box;
+    background-color: var(--bs-card-bg);
+    border: var(--bs-card-border-width) solid var(--bs-card-border-color);
+    border-radius: var(--bs-card-border-radius);
+    display: flex;
+    flex-direction: column;
+    height: var(--bs-card-height);
+    min-width: 0;
+    position: relative;
+}
+
+.stat-sm {
+    height: 40px;
+    padding: 0.625rem;
+    width: 40px;
+}
+.stat {
+    background: var(--background-color);
+    border-radius: 50%;
+    height: 48px;
+    padding: 0.75rem;
+    width: 48px;
+}
+
+.stat-min {
+    background-color: rgba(75,191,115,.175);
+    color: color-yiq(rgba(75,191,115,.175));
+    color: #4bbf73;
+}
+
+.stat-max {
+    background-color: rgba(217,83,79,.175);
+    color: color-yiq(rgba(217,83,79,.175));
+    color: #d9534f;
+}
+
+.stat-med {
+    background-color: rgba(217, 143, 79, 0.175);
+    color: color-yiq(rgba(217, 157, 79, 0.175));
+    color: #d9844f;
+}
+
+
+
+.badge-soft-danger {
+    background-color: rgba(217,83,79,.175);
+    color: color-yiq(rgba(217,83,79,.175));
+    color: #d9534f;
+}
+
+.badge-soft-primary {
+    background-color: rgba(217, 143, 79, 0.175);
+    color: color-yiq(rgba(217, 157, 79, 0.175));
+    color: #d9844f;
+}
+
+
+.badge-soft-success {
+    background-color: rgba(75,191,115,.175);
+    color: color-yiq(rgba(75,191,115,.175));
+    color: #4bbf73;
+}
+.card-title{
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 0.6rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.time-title{
+    font-size: .9rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+[data-theme='dark'] .form-control {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-color: rgba(0, 0, 0, 0.6);
+    color: var(--text-color) !important;
+}
+
+[data-theme='dark'] .form-control:focus {
+    color: var(--text-color) !important;
+}
+
+[data-theme='light'] .d-block-light,
+[data-theme='dark'] .d-block-dark {
+    display: block !important;
+}
+
+.navbar-expand-md .navbar-collapse {
+    margin: 0 30px;
+}
