@@ -1,4 +1,5 @@
-console.log("Dale a like");
+console.log('%c' + 'Hecho por Alberto Fuentes', 'font-family:Comic Sans MS; font-size:50px; font-weight:bold; background: linear-gradient(#f00, yellow); border-radius: 5px; padding: 20px')
+
 
 const getRandomInt = (min, max) => {
     return Math.floor(Math.random() * (max-min)) + min;
