@@ -34,7 +34,7 @@ const printCard = (pokemon) => {
     const clone = template.cloneNode(true);
     const fragment = document.createDocumentFragment();
 
-    clone.querySelector('.h1').textContent = `${pokemon.nombre}`;
+    clone.querySelector('.h1').textContent = `0,151`;
 
     fragment.appendChild(clone)
     flex.appendChild(fragment)
