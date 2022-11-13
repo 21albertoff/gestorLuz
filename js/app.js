@@ -343,8 +343,14 @@ const fetchData = async (stringAPI, hora, fechaHoy) => {
             arrayDeValores.push(data.included[0].attributes.values[i+1].value);
           }
           console.log(arrayDeValores);
-          precioSig = (Math.min.apply(null, arrayDeValores))/1000;
-          horaSiguienteMejor = arrayDeValores.indexOf(precioSig);
+          precioSinFiltro = (Math.min.apply(null, arrayDeValores));
+          precioSig = ((Math.min.apply(null, arrayDeValores))/1000).toFixed(4);
+          console.log(precioSig);
+
+
+          horaSiguienteMejor = arrayDeValores.indexOf(precioSinFiltro);
+          console.log(horaSiguienteMejor);
+
           horaSiguienteMejor = `${horaSiguienteMejor+1+hora}:00-${horaSiguienteMejor+2+hora}:00`;
 
         const gestordeluz = {
@@ -451,15 +457,15 @@ const printCard = (gestordeluz) => {
     clone.querySelector('#mediaPrecioActual').innerHTML = `${gestordeluz.mediaPrecioActual}%`;
 
     if (gestordeluz.mediaPrecioActual > gestordeluz.limiteMaximo){
-        clone.querySelector('#precioActual').style = 'color: #d9534f; font-size: 5.3em;';
+        clone.querySelector('#precioActual').style = 'color: #d9534f; font-size: 5.1em;';
         clone.querySelector('#identificadorPrecio').style = 'color: #d9534f;';
         clone.querySelector('#mediaPrecioActual').setAttribute("class", "badge badge-soft-danger me-2");
     } else if(gestordeluz.mediaPrecioActual < gestordeluz.limiteMinimo){
-        clone.querySelector('#precioActual').style = 'color: #4bbf73; font-size: 5.3em;';
+        clone.querySelector('#precioActual').style = 'color: #4bbf73; font-size: 5.1em;';
         clone.querySelector('#identificadorPrecio').style = 'color: #4bbf73;';
         clone.querySelector('#mediaPrecioActual').setAttribute("class", "badge badge-soft-success me-2");
     } else {
-        clone.querySelector('#precioActual').style = 'color: #d9844f; font-size: 5.3em;';
+        clone.querySelector('#precioActual').style = 'color: #d9844f; font-size: 5.1em;';
         clone.querySelector('#identificadorPrecio').style = 'color: #d9844f;';
         clone.querySelector('#mediaPrecioActual').setAttribute("class", "badge badge-soft-primary me-2");
     }
