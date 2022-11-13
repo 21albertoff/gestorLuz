@@ -343,7 +343,7 @@ const fetchData = async (stringAPI, hora, fechaHoy) => {
             arrayDeValores.push(data.included[0].attributes.values[i+1].value);
           }
           console.log(arrayDeValores);
-          precioSig = Math.min.apply(null, arrayDeValores);
+          precioSig = (Math.min.apply(null, arrayDeValores))/1000;
           horaSiguienteMejor = arrayDeValores.indexOf(precioSig);
           horaSiguienteMejor = `${horaSiguienteMejor+1+hora}:00-${horaSiguienteMejor+2+hora}:00`;
 
