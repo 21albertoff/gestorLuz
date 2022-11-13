@@ -336,19 +336,16 @@ const fetchData = async (stringAPI, hora, fechaHoy) => {
           var precioSig = '-'
           var algunMinimo = false;
 
-          for (var i = hora; i < 23; i++) {
-            if (data.included[0].attributes.values[i+1].value < data.included[0].attributes.values[i].value){
-                horaSiguienteMejor = `${i+1}:00-${i+2}:00`;
-                precioSig = ((data.included[0].attributes.values[i+1].value)/1000).toFixed(4);
-                algunMinimo = true;
-            }
 
-            if (data.included[0].attributes.values[i+1].value > data.included[0].attributes.values[i].value){
-                if (algunMinimo){
-                    break;
-                }
-            }
+          const arrayDeValores = [];
+
+          for (var i = hora; i < 23; i++) {
+            arrayDeValores.push(data.included[0].attributes.values[i+1].value);
           }
+          console.log(arrayDeValores);
+          precioSig = Math.min.apply(null, arrayDeValores);
+          horaSiguienteMejor = arrayDeValores.indexOf(precioSig);
+          horaSiguienteMejor = `${horaSiguienteMejor+1+hora}:00-${horaSiguienteMejor+2+hora}:00`;
 
         const gestordeluz = {
 
@@ -473,11 +470,11 @@ const printCard = (gestordeluz) => {
 
 
     if (gestordeluz.mediaSiguiente > gestordeluz.limiteMaximo){
-        clone.querySelector('#mediaPrecioActual').setAttribute("class", "badge badge-soft-danger me-2");
+        clone.querySelector('#mediaSiguiente').setAttribute("class", "badge badge-soft-danger me-2");
     } else if(gestordeluz.mediaSiguiente < gestordeluz.limiteMinimo){
-        clone.querySelector('#mediaPrecioActual').setAttribute("class", "badge badge-soft-success me-2");
+        clone.querySelector('#mediaSiguiente').setAttribute("class", "badge badge-soft-success me-2");
     } else {
-        clone.querySelector('#mediaPrecioActual').setAttribute("class", "badge badge-soft-primary me-2");
+        clone.querySelector('#mediaSiguiente').setAttribute("class", "badge badge-soft-primary me-2");
     }
 
     clone.querySelector('#horaMin').innerHTML = `<i class="bi bi-clock"></i> ${gestordeluz.horaMin}`;
