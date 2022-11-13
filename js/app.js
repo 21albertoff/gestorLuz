@@ -457,15 +457,15 @@ const printCard = (gestordeluz) => {
     clone.querySelector('#mediaPrecioActual').innerHTML = `${gestordeluz.mediaPrecioActual}%`;
 
     if (gestordeluz.mediaPrecioActual > gestordeluz.limiteMaximo){
-        clone.querySelector('#precioActual').style = 'color: #d9534f; font-size: 5.1em;';
+        clone.querySelector('#precioActual').style = 'color: #d9534f; font-size: 5em;';
         clone.querySelector('#identificadorPrecio').style = 'color: #d9534f;';
         clone.querySelector('#mediaPrecioActual').setAttribute("class", "badge badge-soft-danger me-2");
     } else if(gestordeluz.mediaPrecioActual < gestordeluz.limiteMinimo){
-        clone.querySelector('#precioActual').style = 'color: #4bbf73; font-size: 5.1em;';
+        clone.querySelector('#precioActual').style = 'color: #4bbf73; font-size: 5em;';
         clone.querySelector('#identificadorPrecio').style = 'color: #4bbf73;';
         clone.querySelector('#mediaPrecioActual').setAttribute("class", "badge badge-soft-success me-2");
     } else {
-        clone.querySelector('#precioActual').style = 'color: #d9844f; font-size: 5.1em;';
+        clone.querySelector('#precioActual').style = 'color: #d9844f; font-size: 5em;';
         clone.querySelector('#identificadorPrecio').style = 'color: #d9844f;';
         clone.querySelector('#mediaPrecioActual').setAttribute("class", "badge badge-soft-primary me-2");
     }
